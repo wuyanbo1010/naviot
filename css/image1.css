@@ -39,7 +39,7 @@
 
 .countdown div {
     color: #fff;
-    font-size: 4vw;
+    font-size: 6vw;
     font-weight: bolder;
     text-shadow: 0px 0 8px rgba(104, 216, 250, 0);
     text-align: center;
@@ -53,6 +53,9 @@
 
 @media screen and (min-width: 1200px) {
     .countdown div {
-        font-size: 4vw; /* 在大屏幕下调整字体大小 */
+        font-size: 6vw; /* 在大屏幕下调整字体大小 */
     }
+}
+.bottom div {
+	font-size: 3.5vw;
 }

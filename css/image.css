@@ -1,102 +1,167 @@
-	#web_bg {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		min-width: 1000px;
-		z-index: -10;
-		zoom: 1;
-		background-color: #fff;
-		background-repeat: no-repeat;
-		background-size: cover; /* 将背景图调整为覆盖整个元素，可能会裁切部分 */
-		-webkit-background-size: cover;
-		-o-background-size: cover;
-		background-position: center 0;
-	}
+#web_bg {
+	/* 背景图样式 */
+	position: fixed;
+	/* 固定定位，相对于视口 */
+	top: 0;
+	/* 顶部边缘距离视口顶部为0 */
+	left: 0;
+	/* 左边缘距离视口左侧为0 */
+	width: 100%;
+	/* 宽度占满整个视口 */
+	height: 100%;
+	/* 高度占满整个视口 */
+	min-width: 1000px;
+	/* 设置最小宽度，防止过度缩小 */
+	z-index: -10;
+	/* 设定 z-index 为负值，使背景图在 z 轴上位于最底层 */
+	zoom: 1;
+	/* 触发 hasLayout，避免 IE 下的一些 bug */
+	background-color: #fff;
+	/* 背景颜色为白色，作为背景图可能无法完全覆盖时的底色 */
+	background-repeat: no-repeat;
+	/* 背景图不重复 */
+	background-size: cover;
+	/* 背景图尽量覆盖整个元素，可能会裁切部分 */
+	-webkit-background-size: cover;
+	/* Safari 和 Chrome 的私有属性 */
+	-o-background-size: cover;
+	/* Opera 的私有属性 */
+	background-position: center 0;
+	/* 背景图水平居中，垂直顶部对齐 */
+}
+
+body {
+	/* 全局背景样式 */
+	background: #000 url(bg.jpg);
+	/* 背景颜色为黑色，图片为 bg.jpg */
+	background-attachment: fixed;
+	/* 背景图固定，不随滚动而移动 */
+	background-blend-mode: hard-light;
+	/* 背景图与背景颜色的混合模式 */
+}
+
+.container {
+	/* 容器样式 */
+	position: absolute;
+	/* 绝对定位，相对于最近的已定位的父元素 */
+	top: 70%;
+	/* 顶部边缘距离父元素顶部的距离为70% */
+	left: 100px;
+	/* 左边缘距离父元素左侧的距离为100px */
+	right: 100px;
+	/* 右边缘距离父元素右侧的距离为100px */
+	transform: translate(-0%, -50%);
+	/* 平移，将元素向上移动50%，保持垂直居中 */
+	background: url(bg.jpg);
+	/* 背景图为 bg.jpg */
+	background-attachment: fixed;
+	/* 背景图固定，不随滚动而移动 */
+	display: flex;
+	/* 使用 Flex 布局 */
+	justify-content: center;
+	/* 水平居中 */
+	align-items: center;
+	/* 垂直居中 */
+	flex-direction: column;
+	/* 主轴方向为垂直方向 */
+}
+
+.container h2 {
+	/* 标题样式 */
+	text-align: center;
+	/* 文本居中对齐 */
+	font-size: 10em;
+	/* 字体大小为10em */
+	line-height: 0.7em;
+	/* 行高为0.7em */
+	color: #333;
+	/* 字体颜色为深灰色 */
+	margin-top: -80px;
+	/* 顶部外边距为-80px，用于微调位置 */
+}
+
+.container h2 span {
+	/* 副标题样式 */
+	display: block;
+	/* 将 span 设置为块级元素，占据一行 */
+	font-weight: 300;
+	/* 字体粗细为300 */
+	letter-spacing: 6px;
+	/* 字母间距为6px */
+	font-size: 0.2em;
+	/* 字体大小为0.2em */
+}
+
+
+/* 设置.countdown 容器的样式 */
+.countdown {
+	display: flex;
+	/* 使用 Flex 布局 */
+	margin-top: 100px;
+	/* 顶部外边距为50像素 */
+
+	text-align: center;
+	/* 居中对齐文本 */
+}
+
+/* 设置.countdown div 元素的样式 */
+.countdown div {
+	position: relative;
+	/* 相对定位 */
+	line-height: 100px;
+	/* 行高为100像素，用于垂直居中 */
+	text-align: center;
+	/* 居中对齐文本 */
+	background: #33333300;
+	/* 背景颜色 */
+	color: #fff;
+	/* 文本颜色 */
+
 	
-	body
-	{
-		background: #000 url(bg.jpg);
-		background-attachment: fixed;
-		background-blend-mode: hard-light;
-	}
-	
-	.container{
-		position: absolute;
-		top: 70%;
-		left: 100px;
-		right: 100px;
-		transform: translate(-0%, -50%);
-		background: url(bg.jpg);
-		background-attachment: fixed;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
-	
-	.container h2 {
-		text-align: center;
-		font-size: 10em;
-		line-height: 0.7em;
-		color: #333;
-		margin-top: -80px;
-	}
-	
-	.container h2 span{
-		display: block;
-		font-weight: 300;
-		letter-spacing: 6px;
-		font-size: 0.2em;
-	}
-	.countdown{
-		display: flex;
-		margin-top: 50px;
-	}
-	
-	.countdown div{
-		position: relative;
-		
-		height: 30px;
-		line-height: 100px;
-		text-align: center;
-		background: #33333300;
-		color: #fff;
-		margin: 0px;
-		font-size: 6em;
-		font-weight: 500;
-		font-weight:bolder;
-		text-shadow:0px 0 8px rgba(104, 216, 250, 0)
-	}
-	#day {
-		position: relative;
-		width: 337px;
-		height: 30px;
-		line-height: 100px;
-		text-align: center;
-		background: #33333300;
-		color: #ffffff;
-		margin: 0px;
-		font-size: 7em;
-		font-weight: 500;
-		font-weight: bolder;
-		text-shadow: 0px 0 8px rgba(104, 216, 250, 0.452);
-	  }
-	  
-	  #hour {
-		/* 同样的样式，替换width、height等属性为你需要的值 */
-	  }
-	  
-	  #minute {
-		/* 同样的样式，替换width、height等属性为你需要的值 */
-	  }
-	  
-	  #second {
-		/* 同样的样式，替换width、height等属性为你需要的值 */
-	  }
-	  
-	/*
+	font-size: 6em;
+	/* 字体大小为6em */
+	font-weight: bolder;
+	/* 字体加粗 */
+	text-shadow: 0px 0 8px rgba(104, 216, 250, 0);
+	/* 文本阴影效果 */
+}
+
+/* 设置#day 元素的样式 */
+#day {
+	position: relative;
+	/* 相对定位 */
+
+
+	line-height: 100px;
+	/* 行高为100像素，用于垂直居中 */
+	text-align: center;
+	/* 居中对齐文本 */
+	background: #33333300;
+	/* 背景颜色 */
+	color: #ffffff;
+	/* 文本颜色 */
+	margin: -100px -4em 50px;
+	/* 外边距：上移100px、左移4em、下50px */
+	font-size: 6em;
+	/* 字体大小为6em */
+	font-weight: bolder;
+	/* 字体加粗 */
+	text-shadow: 0px 0 8px rgba(104, 216, 250, 0.452);
+	/* 文本阴影效果 */
+}
+
+
+
+
+#minute {
+	/* 同样的样式，替换width、height等属性为你需要的值 */
+}
+
+#second {
+	/* 同样的样式，替换width、height等属性为你需要的值 */
+}
+
+/*
 	.countdown div:before{
 		content: '';
 		position: absolute;

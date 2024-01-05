@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="css/image.css">
+	<link rel="stylesheet" type="text/css" href="css/image1.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>领航智联</title>
 	<style type="text/css">
@@ -32,34 +32,32 @@
 			var m = Math.floor(t / 1000 / 60 % 60);
 			var s = Math.floor(t / 1000 % 60);
 
-			document.getElementById('day').innerText = d+"天";
+			document.getElementById('day').innerText = d + "天";
 			document.getElementById('hour').innerText = h.toString().padStart(2, '0') + ":";
 			document.getElementById('minute').innerText = m.toString().padStart(2, '0') + ":";
 			document.getElementById('second').innerText = s.toString().padStart(2, '0');
-			
+
 		}
 		setInterval(countDown, 1000);
 	</script>
 </head>
 
 <body>
-	</div>
-
 	<div class="wrapper">
 		<!--背景图片-->
 		<div id="web_bg" style="background-image: url(images/背景.jpg);">
-			
-		
 		</div>
 		<div class="container">
 			<div class="countdown">
-				<div id="day">NA</div>					
-				<div id="hour">NA</div>
-				<div id="minute">NA</div>				
-				<div id="second">NA</div>	
+				<div class="top">
+					<div id="day">NA</div>
+				</div>
+				<div class="bottom">
+					<div id="hour">NA</div>
+					<div id="minute">NA</div>
+					<div id="second">NA</div>
+				</div>
 			</div>
-		<!--其他代码 ... -->
-
 		</div>
 </body>
 
